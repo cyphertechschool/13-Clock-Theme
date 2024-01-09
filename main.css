@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #000;
+  --clr-secondary: whitesmoke;
+  --clr-accent: #e73c3c;
+}
+
+html {
+  transition: all 0.5s ease-in;
+  user-select: none;
+}
+
+html.dark {
+  --clr-primary: #fff;
+  --clr-secondary: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--clr-primary);
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.toggle {
+  cursor: pointer;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  border: 0;
+  border-radius: 2px;
+  padding: 8px 12px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.needle {
+  background-color: var(--clr-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+  width: 4px;
+  height: 70px;
+  z-index: 1;
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 90px;
+  width: 3px;
+  z-index: 2;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 95px;
+  width: 2px;
+  background-color: var(--clr-accent);
+  z-index: 3;
+}
+
+.center-point {
+  background-color: var(--clr-accent);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.center-point::after {
+  content: "";
+  background-color: var(--clr-primary);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 60px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}
